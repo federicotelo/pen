@@ -5,9 +5,10 @@ html, body {
 }
 
 footer {
+   width: 20%;
+   margin-left: 40%;
    position: absolute;
    bottom: 0;
-   
 }
 
 
