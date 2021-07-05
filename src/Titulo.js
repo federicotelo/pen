@@ -7,7 +7,7 @@ const Titulo = () => {
       <div class="container">
                <div class="row">
                   <div class="col">
-                     <img id="imgtit" src={logo} alt="logo" width="80" height="75"/>
+                     <img id="imgtit" src={logo} alt="logo" width="80" height="39"/>
                   </div>
                   <div class="col-8">
 
