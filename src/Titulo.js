@@ -7,13 +7,13 @@ const Titulo = () => {
       <div class="container">
                <div class="row">
                   <div class="col">
-                     <img id="imgtit" src={logo} alt="logo" width="80" height="39"/>
+                     <img id="imgtit" src={logo} alt="logo" width="100" height="59"/>
                   </div>
                   <div class="col-8">
 
-                     <span className="titulo" >PEN Global Observatory for Freedom of Expression</span>
+                     <span className="titulo" >Global Observatory for Freedom of Expression</span>
                      <br/>
-                     <span className="subtitulo" >Since 1921 guardians of freedom of expression around the world.</span>
+                     <span className="subtitulo" >Since 1921 guardians of Freedom of Expression around the world.</span>
                   </div>
 
                   <div class="col actionLinks">
