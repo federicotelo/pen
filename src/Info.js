@@ -7,19 +7,18 @@ const Info = () => {
    const {info} = useContext(Contexto)
       
    return (
-      <>
-         <h1>INFO</h1>
-         
-         <ul>
-            {
-               info.map((item,index) =>
-                  <li key={index}> {item} </li>
-               )
-               
-            }
-         </ul>
-                
-      </>
+      <div id="infoContainer">
+         <div id="info">
+            <span className="titulo">INFO</span>
+            <ul>
+               {
+                  info.map((item,index) =>
+                     <li key={index}> {item} </li>
+                  )
+               }
+            </ul>
+         </div>
+      </div>
    );
 }
 

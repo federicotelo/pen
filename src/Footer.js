@@ -3,10 +3,11 @@ import React from 'react';
 
 
 const Footer = () => {
+   const year = new Date().getFullYear();
    return (
 
       <footer className="footer">
-             <span>PEN International © 2021 Copyright</span>
+             <span>PEN International © {year} Copyright</span>
        </footer>
 
    );

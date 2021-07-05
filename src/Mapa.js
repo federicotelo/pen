@@ -9,16 +9,18 @@ const mapData = {
    SE: 0,
    FI: 0,
    FR: 0,
-   US: 20
+   US: 20,
+   AR: 5000
  };
  
  const handleClick = (e, countryCode) => {
    console.log(countryCode);
  };
  
+  
  const Map = () => {
    return (
-     <div>
+     <div id="mapa">
        <VectorMap
          map={"world_mill"}
          backgroundColor="transparent" //change it to ocean blue: #0077be
@@ -31,7 +33,7 @@ const mapData = {
          containerClassName="map"
          regionStyle={{
            initial: {
-             fill: "#e4e4e4",
+             fill: "#FFF",
              "fill-opacity": 0.9,
              stroke: "none",
              "stroke-width": 0,
@@ -46,12 +48,12 @@ const mapData = {
            },
            selectedHover: {}
          }}
-         regionsSelectable={true}
+         regionsSelectable={false}
          series={{
            regions: [
              {
                values: mapData, //this is your data
-               scale: ["#146804", "#ff0000"], //your color game's here
+               scale: ["#FFFFFF", "#FE2E2E"], //your color game's here
                normalizeFunction: "polynomial"
              }
            ]

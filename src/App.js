@@ -6,7 +6,6 @@ import Info from './Info';
 import Mapa from './Mapa';
 import Titulo from './Titulo';
 
-
 function App() {
 
    const [datos, setDatos] = useState([])
@@ -22,12 +21,12 @@ function App() {
       const data = await fetch('https://jsonplaceholder.typicode.com/users')
       const datos = await data.json()
       setDatos(datos)
-      
+      console.log(JSON.stringify(datos))
    }
    
 
    const mostrarDatos=(e)=>{
-      const seleccionInfo = datos.map(item =>  item.[e.target.name] )
+      const seleccionInfo = datos.map(item =>  item[e.target.name] )
       setInfo(seleccionInfo)         
              
    }
