@@ -4,16 +4,16 @@ import { Contexto } from './Contexto';
 
 const Info = () => {
 
-   const {info} = useContext(Contexto)
-      
+   const { info } = useContext(Contexto)
+
    return (
       <div id="infoContainer">
          <div id="info">
             <span className="titulo">INFO</span>
-            <ul>
+            <ul type="none">
                {
-                  info.map((item,index) =>
-                     <li key={index}> {item} </li>
+                  info.map((item, index) =>
+                     <li key={index}> {item.pais}: {item.info} </li>
                   )
                }
             </ul>
