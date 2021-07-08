@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Contexto } from './Contexto';
 import Form from './Form'
 import Login from './Login'
 import logo from './assets/penlogo.png';
 
 const Titulo = () => {
 
+   const { login, setLogin } = useContext(Contexto)
+
    const [flag, setFlag] = useState(false)
    const [flag2, setFlag2] = useState(false)
 
-   const formulario = () => {
-      setFlag2(false)
-      setFlag(!flag)
+   const formulario = (e) => {
+      if (login) {
+         setFlag2(false)
+         setFlag(!flag)
+         !flag ? e.target.innerText = "Ocultar" : e.target.innerText = "Load"
+      } else {
+         alert("Ops, parece que no estas Autorizado")
+      }
    }
 
-   const login = () => {
-      setFlag(false)
-      setFlag2(!flag2)
+   const formLogin = (e) => {
+      if (!login) {
+         setFlag(false)
+         setFlag2(!flag2)
+      } else {
+         setLogin(false)
+         alert()
+      }
+
    }
 
    return (
@@ -34,7 +48,9 @@ const Titulo = () => {
 
             <div className="col actionLinks">
 
-               <span className="topLinks" onClick={login}  >login</span>
+               {login ? <span className="topLinks" onClick={formLogin}  >logout</span>
+                  : <span className="topLinks" onClick={formLogin}  >login</span>
+               }
                &nbsp;|&nbsp;
                <span className="topLinks" onClick={formulario}>load</span>
             </div>
@@ -43,7 +59,7 @@ const Titulo = () => {
             flag && <Form />
          }
          {
-            flag2 && <Login />
+            (flag2 && !login) && <Login />
          }
 
 

@@ -6,7 +6,6 @@ import Footer from './Footer';
 import Info from './Info';
 import Mapa from './Mapa';
 import Titulo from './Titulo';
-import Form from './Form';
 
 
 
@@ -18,7 +17,7 @@ function App() {
    const [pais, setPais] = useState('')
    const [codigo, setCodigo] = useState('')
    const [inf, setInf] = useState('')
-
+   const [login, setLogin] = useState(false)
 
    useEffect(() => {
       obtenerDatos()
@@ -66,7 +65,7 @@ function App() {
 
 
    return (
-      <Contexto.Provider value={{ mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais, mapData }}>
+      <Contexto.Provider value={{ mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais, mapData, setLogin, login }}>
 
          <Titulo />
          <Mapa />

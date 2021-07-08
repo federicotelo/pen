@@ -1,18 +1,26 @@
-import React, { useContext } from 'react';
-// import { Contexto } from './Contexto';
+import React, { useContext, useState } from 'react';
+import { Contexto } from './Contexto';
 
 
 
 const Login = () => {
 
-   // const { } = useContext(Contexto)
+   const { setLogin } = useContext(Contexto)
+   const [user, setUser] = useState()
+   const [pass, setPass] = useState()
+
 
    const submit = (e) => {
       e.preventDefault()
-      // e.target.reset()
-      // setPais('')
-      // setCodigo('')
-      // setInf('')
+      e.target.reset()
+      setUser('')
+      setPass('')
+      if (user == "pen" && pass == "100") {
+         setLogin(true)
+
+      } else {
+         alert("En algo le pifiaste, Proba con P: pen U: 100 ")
+      }
    }
 
 
@@ -26,13 +34,13 @@ const Login = () => {
                      type="text"
                      placeholder="Usuario"
                      className="form-control form-control-sm mb-2"
-                  // onChange={(e) => setUsuario(e.target.value)}
+                     onChange={(e) => setUser(e.target.value)}
                   />
                   <input
                      type="pass"
                      placeholder="Contraseña"
                      className="form-control form-control-sm mb-2"
-                  // onChange={(e) => setUsuario(e.target.value)}
+                     onChange={(e) => setPass(e.target.value)}
 
                   />
                   <button className="btn btn-primary btn-block small" type="submit">Login</button>
