@@ -27,8 +27,8 @@ const Login = () => {
    return (
 
       <div className="container text-center mt-5 form row ">
-         <div className="d-flex justify-content-center col-12">
-            <div className="col-4 bg-dark p-3">
+         <div className="d-flex justify-content-center col-12 ">
+            <div className="col-4 bg-dark p-3 trans">
                <form onSubmit={submit} >
                   <input
                      type="text"
@@ -43,7 +43,7 @@ const Login = () => {
                      onChange={(e) => setPass(e.target.value)}
 
                   />
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <div class=" d-flex justify-content-around">
                      <button className="btn btn-primary  btn-login btn-sm mt-1" type="submit">Login</button>
                      <button className="btn btn-primary btn-login  btn-sm mt-1" onClick={() => setFlag2(false)} >Cerrar</button>
                   </div>

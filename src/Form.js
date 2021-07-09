@@ -21,7 +21,7 @@ const Form = () => {
 
       <div className="container text-center mt-5 form row ">
          <div className="d-flex justify-content-center col-12">
-            <div className="col-4 bg-dark p-3">
+            <div className="col-4 bg-dark p-3 trans">
                <form onSubmit={submit} >
                   <input
                      type="text"
@@ -44,7 +44,7 @@ const Form = () => {
                      onChange={(e) => setInf(e.target.value)}
                      required
                   />
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <div class=" d-flex justify-content-around">
                      <button className="btn btn-primary  btn-sm mt-1" type="submit">Agregar</button>
                      <button className="btn btn-primary  btn-sm mt-1" onClick={() => setFlag(false)} >Cerrar</button>
 
