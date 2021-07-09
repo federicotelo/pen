@@ -17,6 +17,8 @@ function App() {
    const [pais, setPais] = useState('')
    const [codigo, setCodigo] = useState('')
    const [inf, setInf] = useState('')
+   const [flag, setFlag] = useState(false)
+   const [flag2, setFlag2] = useState(false)
    const [login, setLogin] = useState(false)
 
    useEffect(() => {
@@ -27,7 +29,7 @@ function App() {
    useEffect(() => {
       separarDatos()
 
-   }, [datos])
+   }, [datos])  // eslint-disable-line react-hooks/exhaustive-deps
 
    const obtenerDatos = async () => {
       const data = await axios.get('http://localhost:4000/api/datos/')
@@ -65,7 +67,10 @@ function App() {
 
 
    return (
-      <Contexto.Provider value={{ mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais, mapData, setLogin, login }}>
+      <Contexto.Provider value={{
+         mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais, mapData,
+         setLogin, login, setFlag, flag, setFlag2, flag2
+      }}>
 
          <Titulo />
          <Mapa />

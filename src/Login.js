@@ -5,7 +5,7 @@ import { Contexto } from './Contexto';
 
 const Login = () => {
 
-   const { setLogin } = useContext(Contexto)
+   const { setLogin, setFlag2 } = useContext(Contexto)
    const [user, setUser] = useState()
    const [pass, setPass] = useState()
 
@@ -15,7 +15,7 @@ const Login = () => {
       e.target.reset()
       setUser('')
       setPass('')
-      if (user == "pen" && pass == "100") {
+      if (user === "pen" && pass === "100") {
          setLogin(true)
 
       } else {
@@ -43,7 +43,10 @@ const Login = () => {
                      onChange={(e) => setPass(e.target.value)}
 
                   />
-                  <button className="btn btn-primary btn-block small" type="submit">Login</button>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                     <button className="btn btn-primary  btn-login btn-sm mt-1" type="submit">Login</button>
+                     <button className="btn btn-primary btn-login  btn-sm mt-1" onClick={() => setFlag2(false)} >Cerrar</button>
+                  </div>
                </form>
             </div>
          </div>

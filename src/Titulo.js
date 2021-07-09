@@ -6,28 +6,27 @@ import logo from './assets/penlogo.png';
 
 const Titulo = () => {
 
-   const { login, setLogin } = useContext(Contexto)
+   const { login, setLogin, flag, setFlag, flag2, setFlag2 } = useContext(Contexto)
 
-   const [flag, setFlag] = useState(false)
-   const [flag2, setFlag2] = useState(false)
 
-   const formulario = (e) => {
+
+   const formulario = () => {
       if (login) {
          setFlag2(false)
-         setFlag(!flag)
-         !flag ? e.target.innerText = "Ocultar" : e.target.innerText = "Load"
+         setFlag(true)
+
       } else {
          alert("Ops, parece que no estas Autorizado")
       }
    }
 
-   const formLogin = (e) => {
+   const formLogin = () => {
       if (!login) {
          setFlag(false)
          setFlag2(!flag2)
       } else {
          setLogin(false)
-         alert()
+         setFlag(false)
       }
 
    }
@@ -48,11 +47,13 @@ const Titulo = () => {
 
             <div className="col actionLinks">
 
-               {login ? <span className="topLinks" onClick={formLogin}  >logout</span>
-                  : <span className="topLinks" onClick={formLogin}  >login</span>
+               {
+                  login ? <span className="topLinks" onClick={formLogin}  >Logout&nbsp;|&nbsp;</span>
+                     : <span className="topLinks" onClick={formLogin}  >Login</span>
                }
-               &nbsp;|&nbsp;
-               <span className="topLinks" onClick={formulario}>load</span>
+               {
+                  login && <span className="topLinks" onClick={formulario}>Load</span>
+               }
             </div>
          </div>
          {

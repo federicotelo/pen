@@ -9,7 +9,7 @@ const Info = () => {
    return (
       <div id="infoContainer">
          <div id="info">
-            <span className="titulo">INFO</span>
+
             <ul type="none">
                {
                   info.map((item, index) =>

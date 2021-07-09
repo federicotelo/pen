@@ -5,7 +5,7 @@ import { Contexto } from './Contexto';
 
 const Form = () => {
 
-   const { cargarDatos, setInf, setCodigo, setPais } = useContext(Contexto)
+   const { cargarDatos, setInf, setCodigo, setPais, setFlag } = useContext(Contexto)
 
    const submit = (e) => {
       e.preventDefault()
@@ -35,14 +35,20 @@ const Form = () => {
                      className="form-control form-control-sm mb-2"
                      onChange={(e) => setCodigo(e.target.value)}
                      maxLength="2"
+                     required
                   />
                   <input
                      type="number"
                      placeholder="Ingrese Valor"
                      className="form-control form-control-sm mb-2"
                      onChange={(e) => setInf(e.target.value)}
+                     required
                   />
-                  <button className="btn btn-primary btn-block small" type="submit">Agregar</button>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                     <button className="btn btn-primary  btn-sm mt-1" type="submit">Agregar</button>
+                     <button className="btn btn-primary  btn-sm mt-1" onClick={() => setFlag(false)} >Cerrar</button>
+
+                  </div>
                </form>
             </div>
          </div>
