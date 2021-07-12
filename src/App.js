@@ -68,8 +68,8 @@ function App() {
 
    return (
       <Contexto.Provider value={{
-         mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais, mapData,
-         setLogin, login, setFlag, flag, setFlag2, flag2
+         mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais,
+         mapData, setLogin, login, setFlag, flag, setFlag2, flag2
       }}>
 
          <Titulo />

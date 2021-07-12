@@ -43,7 +43,7 @@ const Login = () => {
                      onChange={(e) => setPass(e.target.value)}
 
                   />
-                  <div class=" d-flex justify-content-around">
+                  <div className="d-flex justify-content-around">
                      <button className="btn btn-primary  btn-login btn-sm mt-1" type="submit">Login</button>
                      <button className="btn btn-primary btn-login  btn-sm mt-1" onClick={() => setFlag2(false)} >Cerrar</button>
                   </div>

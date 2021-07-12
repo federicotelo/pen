@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Contexto } from './Contexto';
+import { countries } from './assets/paises'
 
 
 
@@ -11,9 +12,18 @@ const Form = () => {
       e.preventDefault()
       cargarDatos()
       e.target.reset()
+      setInf('')
       setPais('')
       setCodigo('')
-      setInf('')
+   }
+
+   const setearCodigo = (e) => {
+      setPais(e.target.value)
+      countries.forEach(countrie => {
+         if (countrie.name_es === e.target.value)
+            setCodigo(countrie.code)
+      })
+
    }
 
 
@@ -23,20 +33,21 @@ const Form = () => {
          <div className="d-flex justify-content-center col-12">
             <div className="col-4 bg-dark p-3 trans">
                <form onSubmit={submit} >
-                  <input
+
+                  <select
                      type="text"
-                     placeholder="Ingrese Pais"
                      className="form-control form-control-sm mb-2"
-                     onChange={(e) => setPais(e.target.value)}
-                  />
-                  <input
-                     type="text"
-                     placeholder="Ingrese Codigo"
-                     className="form-control form-control-sm mb-2"
-                     onChange={(e) => setCodigo(e.target.value)}
-                     maxLength="2"
+                     onChange={setearCodigo}
                      required
-                  />
+                  >
+                     <option value="">Elige una Pais...</option>
+                     {
+                        countries.map(countrie =>
+                           <option key={countrie.code}>{countrie.name_es}</option>
+                        )
+                     }
+                  </select>
+
                   <input
                      type="number"
                      placeholder="Ingrese Valor"
@@ -44,11 +55,12 @@ const Form = () => {
                      onChange={(e) => setInf(e.target.value)}
                      required
                   />
-                  <div class=" d-flex justify-content-around">
+
+                  <div className=" d-flex justify-content-around">
                      <button className="btn btn-primary  btn-sm mt-1" type="submit">Agregar</button>
                      <button className="btn btn-primary  btn-sm mt-1" onClick={() => setFlag(false)} >Cerrar</button>
-
                   </div>
+
                </form>
             </div>
          </div>
