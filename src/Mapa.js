@@ -26,11 +26,12 @@ const Map = () => {
       <VectorMap
          map={"world_mill"}
          backgroundColor="transparent" //change it to ocean blue: #0077be
-         zoomOnScroll={false}
+         zoomOnScroll={true}
          containerStyle={{
             width: "100%",
             height: "500px"
          }}
+         zoomAnimate={true}
          onRegionClick={mostrarDatos} //gets the country code
          containerClassName="map"
          regionStyle={{
@@ -45,9 +46,9 @@ const Map = () => {
                "fill-opacity": 0.8,
                cursor: "pointer"
             },
-            selected: {
-               fill: "#2938bc" //color for the clicked country
-            },
+            // selected: {
+            //    fill: "#2938bc" //color for the clicked country
+            // },
             selectedHover: {}
          }}
          regionsSelectable={false}

@@ -61,6 +61,7 @@ function App() {
    const mostrarDatos = (e, countryCod) => {
       console.log(countryCod)
       let data = datos.filter(item => item.codigo === countryCod)
+      console.log("data: ", data)
       setInfo(data)
       Array.from(document.getElementsByClassName("jvectormap-tip")).forEach((el) => { el.style.display = "none" });
    }
@@ -74,7 +75,7 @@ function App() {
 
          <Titulo />
          <Mapa />
-         <Info />
+         {info.length !== 0 && <Info />}
          <Footer />
 
       </Contexto.Provider>
