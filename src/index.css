@@ -48,18 +48,13 @@ footer {
    color:whitesmoke;
    /* border-style: solid; */
    border-radius: 25px;
-   width: 30%;
-   height: 15%;
+   min-width: 30%;
+   min-height: 15%;
    text-align:left;
    background-color:black;
    opacity: .6;
-   padding-top: 10px;
-
-
+   padding-top: 5px;
 }
-
-
-
 
 .actionLinks {
    color:royalblue;

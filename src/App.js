@@ -69,13 +69,13 @@ function App() {
 
    return (
       <Contexto.Provider value={{
-         mostrarDatos, info, cargarDatos, setInf, setCodigo, setPais,
+         mostrarDatos, info, setInfo, cargarDatos, setInf, setCodigo, setPais,
          mapData, setLogin, login, setFlag, flag, setFlag2, flag2
       }}>
 
          <Titulo />
          <Mapa />
-         {info.length !== 0 && <Info />}
+         {(info.length !== 0 && !flag && !flag2) && <Info />}
          <Footer />
 
       </Contexto.Provider>
